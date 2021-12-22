@@ -1,0 +1,14 @@
+[Unit]
+Description=Mount unit for postgresql10, revision 47
+Before=snapd.service
+After=zfs-mount.service
+
+[Mount]
+What=/var/lib/snapd/snaps/postgresql10_47.snap
+Where=/snap/postgresql10/47
+Type=squashfs
+Options=nodev,ro,x-gdu.hide,x-gvfs-hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=multi-user.target

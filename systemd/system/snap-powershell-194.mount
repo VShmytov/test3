@@ -1,0 +1,14 @@
+[Unit]
+Description=Mount unit for powershell, revision 194
+Before=snapd.service
+After=zfs-mount.service
+
+[Mount]
+What=/var/lib/snapd/snaps/powershell_194.snap
+Where=/snap/powershell/194
+Type=squashfs
+Options=nodev,ro,x-gdu.hide,x-gvfs-hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=multi-user.target
